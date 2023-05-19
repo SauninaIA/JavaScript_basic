@@ -1,0 +1,29 @@
+<script>
+    const numberToGuess = Math.floor(Math.random() * 1000)
+    console.log("Я загадал: ", numberToGuess)
+    
+    while (true) {
+        const numberFromUser = prompt("Введите число от 0 до 999 или q для выхода из игры")
+        console.log("Вы ввели: ", numberFromUser)
+        if (numberFromUser === "q") {
+            break;
+        }
+        if (isNaN(+numberFromUser)) {
+            alert("Вы ввели не число");
+            continue;
+        }
+        if (numberToGuess < numberFromUser) {
+            alert("Меньше");
+            continue;
+        } else if (numberToGuess > numberFromUser) {
+            alert("Больше");
+            continue;
+        } else {
+            alert("Вы угадали!");
+            break;
+        }
+    }
+</script>
+
+
+
